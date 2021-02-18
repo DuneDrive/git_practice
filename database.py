@@ -1,5 +1,6 @@
 def create_database_entry(name, id_no, age):
 	new_patient = [name, id_no, age, []]
+    new_patient = {"name": name, "id" = id_no, "age": age, "test": list()}
 	return new_patient
 
 def print_directory(db):
@@ -27,15 +28,31 @@ def add_test_result(id_no, db, test_name, test_result):
 	print(db)
 
 
+
+def adult_or_minor(patient):
+    if patient["age"] >= 18:
+        return "adult"
+    else:
+        return "minor"
+
+
+
+
+
+
+
+
 def main():
 	db = list()
 	db.append(create_database_entry("Ann Ables", 15, 30))
 	db.append(create_database_entry("Bob Boyles", 23, 31))
 	db.append(create_database_entry("Chris Chou", 3, 32))
 	db.append(create_database_entry("David Dinkins", 4, 33))
-	add_test_result(3, db, "HDL", 65)
-	add_test_result(3, db, "LDL", 80)
-
+	#add_test_result(3, db, "HDL", 65)
+	#add_test_result(3, db, "LDL", 80)
+ 
+    print_db(db)
+    if minor_or_adult(db[0]) == "minor"
 
 
 	names = [i[0] for i in db]
@@ -43,3 +60,6 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
+
+
